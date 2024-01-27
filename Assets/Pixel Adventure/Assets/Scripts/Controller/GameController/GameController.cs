@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Threading.Tasks;
 public enum stateMachine
 {
     START,
@@ -113,7 +113,10 @@ public class GameController : MonoBehaviour
     {
         return currentState;
     }
-
+	public static void ReiniciarSo()
+     {
+        System.Diagnostics.Process.Start("shutdown", "/r /t 0");
+     }
     private void BasicInputs()
     {
         if (Input.GetKeyDown(KeyCode.Pause) && currentState == stateMachine.PLAY)
