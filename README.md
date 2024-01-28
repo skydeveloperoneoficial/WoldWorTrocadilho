@@ -1,3 +1,3 @@
 # WoldWorTrocadilho
  
-GlobalGamejam
+GlobalGamejam 2024 corupa santa catarina
