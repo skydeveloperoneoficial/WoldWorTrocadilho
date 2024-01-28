@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Lapis : MonoBehaviour
 {
     [SerializeField] GameObject key;
-     // Start is called before the first frame update
+    public TextMeshProUGUI resposta;
+
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -21,6 +24,8 @@ public class Lapis : MonoBehaviour
     {
         if (key == null)
         {
+
+            resposta.enabled = true;
             Destroy(gameObject);
         }
 
