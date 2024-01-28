@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e3c7e241e95d5468d2b6c4bb06e6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameScene: Scene1
+  nameScene: Scene3
   tela1: {fileID: 1218896102}
   tela2: {fileID: 1181747611}
   music: {fileID: 2061878662}
