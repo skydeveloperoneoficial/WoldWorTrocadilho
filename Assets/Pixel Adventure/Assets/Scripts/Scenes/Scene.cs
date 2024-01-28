@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Scene : MonoBehaviour
 {
      [SerializeField] private string nameScene;
+     [SerializeField] private string credits;
      [SerializeField] private GameObject tela1;
      [SerializeField] private GameObject tela2;
      [SerializeField] private GameObject music;
@@ -14,6 +15,7 @@ public class Scene : MonoBehaviour
 
 
     public string NameScene { get => nameScene; set => nameScene = value; }
+    public string Credits { get => credits; set => credits = value; }
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class Scene : MonoBehaviour
 
     public void BottonBack()
     {
+        PlaySound();
         ControllerScene.SetScene(nameScene);
     }
     public void SetScene() 
@@ -55,4 +58,16 @@ public class Scene : MonoBehaviour
         }
     }
 
-}
+    public void theCredits()
+    {
+        PlaySound();
+        ControllerScene.SetScene(credits);
+    }
+
+    public void Quit()
+    {
+        PlaySound();
+        Application.Quit();
+    }
+ }
+
