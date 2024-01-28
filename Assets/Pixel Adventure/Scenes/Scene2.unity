@@ -3323,7 +3323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0f101f6a6f2d544aa24815b11c0682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasParaDesativar: {fileID: 0}
+  canvasParaDesativar: {fileID: 984227287}
   tempoParaDesativar: 10
   objeto: {fileID: 1992671456}
   pergunta: {fileID: 221891306}
@@ -4352,7 +4352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1811390509
 RectTransform:
   m_ObjectHideFlags: 0

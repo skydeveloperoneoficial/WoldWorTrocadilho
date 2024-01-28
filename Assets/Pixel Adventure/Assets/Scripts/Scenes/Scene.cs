@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class Scene : MonoBehaviour
 
     void Start()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "FinalGame")
+        {
+            StartCoroutine(DelayedSetScene());
+        }
+
         // Adiciona um listener para o evento de clique do botão
         button.onClick.AddListener(PlaySound);
     }
