@@ -7,6 +7,8 @@ public class CharacterMoviment : MonoBehaviour
     [SerializeField] private int layerNumber;
     [SerializeField] private int jumpAnim;
     private AnimationCharacter animationCharacter;
+
+    public AudioSource sound;
     
     private Rigidbody2D rb2;
     public bool isGround;
@@ -52,10 +54,12 @@ public class CharacterMoviment : MonoBehaviour
 
     private void Jump()
     {
+        sound.Play();
         rb2.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         isGround = false;
         // Você pode chamar métodos relacionados à animação aqui, se necessário.
          AnimationCharacter.animCharacter.SetInteger("trasition", jumpAnim);
+        
     }
 
     private void UpdateDirection(float horizontalInput)
