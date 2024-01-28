@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ public class Lapis : MonoBehaviour
 {
     [SerializeField] GameObject key;
     public TextMeshProUGUI resposta;
+    public GameController gc;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,13 @@ public class Lapis : MonoBehaviour
             resposta.enabled = true;
             Destroy(gameObject);
         }
+        else if (other.transform.gameObject.CompareTag("Player"))
+        {
+                gc.SwitchState(stateMachine.DEAD);
 
+                other.GetComponent<CharacterMoviment>();
+                //Debug.Log("Player Dead");//
+        }
+        
     }
 }
