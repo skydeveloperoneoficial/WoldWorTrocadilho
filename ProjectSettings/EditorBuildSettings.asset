@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Pixel Adventure/Scenes/Scene4.unity
     guid: ea3540ae3d416f549a7034cd1a39f1c2
   - enabled: 1
+    path: Assets/Pixel Adventure/Scenes/Credits.unity
+    guid: 39f26d1c26f3cd744ab492d8d21a225c
+  - enabled: 1
     path: Assets/Pixel Adventure/Scenes/Scene5.unity
     guid: 24c9a1c629d4b1842a6879e831517efd
   m_configObjects: {}
