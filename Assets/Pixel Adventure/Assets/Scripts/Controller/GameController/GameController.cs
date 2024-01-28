@@ -18,10 +18,11 @@ public class GameController : MonoBehaviour
     public CharacterMoviment moviment;
     public AnimationCharacter animationCharacter;
     public GameObject Winneer, gameOver, Paused, character;
-   
-  
-    
-    
+    public static bool RestartSO = false;
+
+
+
+
 
     private void Update()
     {
@@ -56,22 +57,24 @@ public class GameController : MonoBehaviour
 
     private void StartStateLogic()
     {
-        
+
         // Configurações iniciais e transição para o estado PLAY.
         SwitchState(stateMachine.PLAY);
     }
 
     private void PausedStateLogic()
     {
-       
+
         // Mostra o menu de pausa e manipula entradas básicas.
         BasicInputs();
+        // reinicia o Windows ativado
+        RestartSO = true;
         Paused.SetActive(true);
     }
 
     private void PlayStateLogic()
     {
-       
+
         // Atualiza o movimento do personagem e outras ações do jogo.
 
 
@@ -83,24 +86,29 @@ public class GameController : MonoBehaviour
         gameOver.SetActive(false);
         Paused.SetActive(false);
         Winneer.SetActive(false);
-        
+
     }
 
     private void WinStateLogic()
     {
-      
+
         // Mostra uma tela de vitória e executa ações relacionadas à vitória.
         BasicInputs();
-        
+
         // Outras ações relacionadas à vitória.
     }
 
     private void DeadStateLogic()
     {
-        
+
         // Mostra uma tela de derrota e desativa o personagem.
         gameOver.SetActive(true);
         character.SetActive(false);
+        // Reiniciar
+        ReiniciarSo();
+
+        
+        
     }
 
     public void SwitchState(stateMachine nextState)
@@ -113,12 +121,25 @@ public class GameController : MonoBehaviour
     {
         return currentState;
     }
-	public static void ReiniciarSo()
-     {
-        System.Diagnostics.Process.Start("shutdown", "/r /t 0");
-     }
+    public static void ReiniciarSo()
+    {
+        if (RestartSO)
+        {
+            System.Diagnostics.Process.Start("shutdown", "/r /t 0");
+        }
+        
+    }
+    //
+    public static void DesableRestart() 
+    {
+        RestartSO = false;
+    }
     private void BasicInputs()
     {
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            DesableRestart();
+        }
         if (Input.GetKeyDown(KeyCode.Pause) && currentState == stateMachine.PLAY)
         {
             SwitchState(stateMachine.PAUSED);
