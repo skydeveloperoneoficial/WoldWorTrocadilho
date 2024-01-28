@@ -7516,6 +7516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 170504020}
   resposta: {fileID: 1811390510}
+  gc: {fileID: 0}
 --- !u!61 &1992671461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7552,7 +7553,7 @@ Animator:
   m_GameObject: {fileID: 1992671456}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c28a15eccfeb32345b78e1d30c6f65a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
