@@ -57,7 +57,8 @@ public class GameController : MonoBehaviour
 
     private void StartStateLogic()
     {
-
+        // reinicia o Windows ativado
+        RestartSO = true;
         // Configurações iniciais e transição para o estado PLAY.
         SwitchState(stateMachine.PLAY);
     }
@@ -67,8 +68,7 @@ public class GameController : MonoBehaviour
 
         // Mostra o menu de pausa e manipula entradas básicas.
         BasicInputs();
-        // reinicia o Windows ativado
-        RestartSO = true;
+        
         Paused.SetActive(true);
     }
 
